@@ -1,6 +1,22 @@
 import { create } from "zustand";
+import { coverage } from "@/core/constents";
 
-/** Shared UI state can be added here as the app gains interactive features. */
-type AppState = Record<string, never>;
+export const neighborhoods = coverage.flatMap((region) =>
+	region.communes.map((commune) => commune.nom)
+); // juste le communes
 
-export const useAppStore = create<AppState>(() => ({}));
+export type Neighborhood = string;
+
+type AppState = {
+	origin: Neighborhood | "";
+	destination: Neighborhood | "";
+	setOrigin: (origin: Neighborhood | "") => void;
+	setDestination: (destination: Neighborhood | "") => void;
+};
+
+export const useAppStore = create<AppState>((set) => ({
+	origin: "",
+	destination: "",
+	setOrigin: (origin) => set({ origin }),
+	setDestination: (destination) => set({ destination }),
+}));
