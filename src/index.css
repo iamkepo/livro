@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #2a251d;
+  background: #f3ede1;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+
+  --background: 40 44% 95%;
+  --foreground: 36 18% 14%;
+  --border: 38 20% 88%;
+  --input: 38 20% 88%;
+  --ring: 219 91% 39%;
+  --radius: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page-shell {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+::selection {
+  color: #fffdf9;
+  background: #1357c6;
+}
+
+@media (max-width: 480px) {
+  .page-shell {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
