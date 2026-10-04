@@ -1,0 +1,6 @@
+import{c as f,a as h}from"./constents.Cnq5K5wJ.js";import{R as a}from"./index.CHQCpkZ9.js";/**
+ * @license lucide-react v1.51.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const S={name:"banknote",size:24,node:[["rect",{width:"20",height:"12",x:"2",y:"6",rx:"2",key:"9lu3g6"}],["circle",{cx:"12",cy:"12",r:"2",key:"1c9p78"}],["path",{d:"M6 12h.01M18 12h.01",key:"113zkx"}]]};S.node;const D=f(S),l=t=>{let e;const n=new Set,c=(s,u)=>{const o=typeof s=="function"?s(e):s;if(!Object.is(o,e)){const d=e;e=u??(typeof o!="object"||o===null)?o:Object.assign({},e,o),n.forEach(m=>m(e,d))}},i=()=>e,r={setState:c,getState:i,getInitialState:()=>g,subscribe:s=>(n.add(s),()=>n.delete(s))},g=e=t(c,i,r);return r},p=(t=>t?l(t):l),y=t=>t;function k(t,e=y){const n=a.useSyncExternalStore(t.subscribe,a.useCallback(()=>e(t.getState()),[t,e]),a.useCallback(()=>e(t.getInitialState()),[t,e]));return a.useDebugValue(n),n}const b=t=>{const e=p(t),n=c=>k(e,c);return Object.assign(n,e),n},x=(t=>t?b(t):b),M=h.flatMap(t=>t.communes.map(e=>e.nom)),v=x(t=>({origin:"",destination:"",setOrigin:e=>t({origin:e}),setDestination:e=>t({destination:e})}));export{D as B,M as n,v as u};
