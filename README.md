@@ -1,6 +1,14 @@
 # Livro
 
-Page de présentation de Livro, construite avec React, TypeScript, Vite, Tailwind CSS, des composants inspirés de shadcn/ui et Zustand.
+Site de Livro construit avec Astro, React, TypeScript, Tailwind CSS, des composants inspirés de shadcn/ui et Zustand. Astro génère une page HTML par route pour que les moteurs de recherche et les réseaux sociaux lisent les métadonnées SEO sans exécuter JavaScript.
+
+## Pages et previews SEO
+
+- `/livro/` : accueil
+- `/livro/estimation/` : estimation de livraison
+- `/livro/zones/` : zones desservies
+
+Les titres, descriptions et images Open Graph/Twitter de chaque route sont configurés dans `src/pages/*.astro`. Le modèle des balises est dans `src/layouts/SiteLayout.astro`.
 
 ## Développement
 
@@ -11,7 +19,7 @@ Page de présentation de Livro, construite avec React, TypeScript, Vite, Tailwin
 
 ## Déploiement GitHub Pages
 
-La base Vite et l’URL canonique ciblent le dépôt `iamkepo/livro`.
+La base Astro et l’URL canonique ciblent le dépôt `iamkepo/livro`.
 
 1. Vérifier que le dépôt distant Git est configuré et que vous avez le droit d’y pousser.
 2. Exécuter `npm run deploy`. La commande compile le site puis publie `dist` sur la branche `gh-pages`.

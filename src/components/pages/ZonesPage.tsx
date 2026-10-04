@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, MapPin, RotateCcw } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { baseUrl, cn } from "@/lib/utils";
 import { coverage } from "@/core/constents";
 
 function arrondissementLabel(
@@ -60,13 +59,13 @@ export default function ZonesPage() {
   return (
     <main className="page-shell">
       <div className="w-full max-w-sm">
-        <Link
-          to="/"
+        <a
+          href={baseUrl}
           className="mb-7 inline-flex items-center gap-2 rounded-lg py-2 pr-2 text-sm font-semibold text-inksoft transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
           <ArrowLeft aria-hidden="true" className="h-4 w-4" />
           Retour à l’accueil
-        </Link>
+        </a>
 
         <header className="mb-6">
           <Badge variant="secondary" className="mb-3 gap-1.5 border-0">
@@ -246,13 +245,13 @@ export default function ZonesPage() {
           Votre quartier n’apparaît pas dans la liste ? Contactez Livro pour vérifier la disponibilité.
         </p>
 
-        <Link
-          to="/estimation"
+        <a
+          href={`${baseUrl}estimation/`}
           className={cn(buttonVariants({ variant: "default" }), "w-full justify-between")}
         >
           <span>Demander une estimation</span>
           <ArrowRight aria-hidden="true" className="h-5 w-5" />
-        </Link>
+        </a>
       </div>
     </main>
   );

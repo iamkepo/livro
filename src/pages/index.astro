@@ -1,0 +1,10 @@
+---
+import HomePage from "../components/pages/HomePage";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const title = "Livro — Coursier et livraison à Cotonou";
+const description = "Coursier Livro : livraison de colis, courses et achats à Cotonou, Abomey-Calavi et dans les environs. Contactez-nous sur WhatsApp.";
+---
+<SiteLayout title={title} description={description} path="" image="preview">
+  <HomePage client:load />
+</SiteLayout>

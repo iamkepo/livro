@@ -1,0 +1,10 @@
+---
+import ZonesPage from "../components/pages/ZonesPage";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const title = "Zones de livraison — Livro Cotonou et environs";
+const description = "Consultez les communes, arrondissements et quartiers desservis par Livro à Cotonou, Abomey-Calavi et dans les départements voisins.";
+---
+<SiteLayout title={title} description={description} path="zones/">
+  <ZonesPage client:load />
+</SiteLayout>

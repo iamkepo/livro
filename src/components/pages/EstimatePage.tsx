@@ -1,10 +1,9 @@
-import { ArrowLeft, ArrowRight, MapPin, MessageCircle, Route } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowLeft, ArrowRight, MapPin, MessageCircle, Route, Map, Banknote } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button, buttonVariants } from "@/components/ui/button";
-import NeighborhoodSelect from "../components/NeighborhoodSelect";
-import { cn } from "@/lib/utils";
+import NeighborhoodSelect from "../common/NeighborhoodSelect";
+import { baseUrl, cn } from "@/lib/utils";
 import { useAppStore } from "@/store/useAppStore";
 
 const WHATSAPP_NUMBER = "2290141969857";
@@ -28,13 +27,13 @@ export default function EstimatePage() {
   return (
     <main className="page-shell">
       <div className="w-full max-w-sm">
-        <Link
-          to="/"
+        <a
+          href={baseUrl}
           className="mb-7 inline-flex items-center gap-2 rounded-lg py-2 pr-2 text-sm font-semibold text-inksoft transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
           <ArrowLeft aria-hidden="true" className="h-4 w-4" />
           Retour à l’accueil
-        </Link>
+        </a>
         <header className="mb-6">
           <Badge variant="secondary" className="mb-3 gap-1.5 border-0">
             <Route aria-hidden="true" className="h-3.5 w-3.5 text-primary" />
@@ -100,7 +99,7 @@ export default function EstimatePage() {
                     className={cn(buttonVariants({ variant: "outline" }), "mt-2 w-full justify-between")}
                   >
                     <span className="inline-flex items-center gap-2">
-                      <MapPin aria-hidden="true" className="h-4 w-4" />
+                      <Map aria-hidden="true" className="h-4 w-4" />
                       Voir le trajet sur Google Maps
                     </span>
                     <ArrowRight aria-hidden="true" className="h-5 w-5" />
@@ -129,20 +128,20 @@ export default function EstimatePage() {
         </Card>
 
         <div className="flex gap-3 rounded-2xl border border-[#e8dece] bg-white/65 p-4">
-          <MapPin aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-clay" />
+          <Banknote aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-clay" />
           <p className="text-xs leading-relaxed text-inksoft">
             Le tarif sera confirmé par Livro selon votre trajet. Aucun prix estimatif n’est affiché
             avant confirmation.
           </p>
         </div>
-        <Link
-          to="/zones"
+        <a
+          href={`${baseUrl}zones/`}
           className="mt-4 mb-8 inline-flex w-full items-center justify-center gap-2 rounded-lg py-2 text-sm font-semibold text-primary transition hover:text-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
           <MapPin aria-hidden="true" className="h-4 w-4" />
           <span>Voir les zones couvertes</span>
           <ArrowRight aria-hidden="true" className="h-5 w-5" />
-        </Link>
+        </a>
       </div>
     </main>
   );
